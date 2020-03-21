@@ -1,0 +1,52 @@
+texto ->
+
+sintagma_adverbial texto |
+sentença pontuação |
+sentença pontuação texto
+
+-------------------------------
+
+sintagma_adverbial ->
+
+advérbio sintagma_adverbial |
+advérbio |
+e
+
+------------------------------
+
+sentença ->
+
+sintagma_nominal sentença |
+sintagma_nominal sintagma_verbal
+
+-----------------------------
+
+sintagma_nominal ->
+
+sintagma_adjetival sintagma_nominal |
+substantivo sintagma_nominal |
+pronome sintagma_nominal |
+substantivo |
+pronome
+
+-----------------------------
+
+sintagma_adjetival ->
+
+sintagma_adverbial adjetivo |
+adjetivo sintagma_adjetival |
+e
+
+------------------------------
+
+sintagma_verbal ->
+
+sintagma_verbal sintagma_adjetival |
+sintagma_verbal sintagma_nominal |
+sintagma_adverbial sintagma_verbal |
+verbo_auxiliar verbo |
+verbo sintagma_verbal |
+verbo |
+e
+
+------------------------------
