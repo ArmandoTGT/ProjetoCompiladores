@@ -12,6 +12,8 @@ class BagOfWord():
         bag = {}
         palavras = []
         count_textos = 0
+
+        print("\n")
         print(self.textos)
         for texto in self.textos:
             texto = texto.split(" ")
