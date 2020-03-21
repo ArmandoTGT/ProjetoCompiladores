@@ -30,10 +30,15 @@ class BagOfWord():
 
                     bag[palavra]["contagem"][count_textos] += 1
 
-                qtd_palavras = sum(bag[palavra]["contagem"])
-                bag[palavra]["frequencia"] = ((1 - qtd_palavras)/qtd_textos)
-
             count_textos += 1
+
+        for palavra in palavras:
+
+            total_palavras = len(palavras)
+            qtd_palavra = sum(bag[palavra]["contagem"])
+
+            bag[palavra]["frequencia"] = ((qtd_palavra)/total_palavras) * 100
+            bag[palavra]["frequencia"] = str("{:.2f}".format(bag[palavra]["frequencia"])) + "%"
 
         print("\n\n\nPalavras:\n", palavras)
         print("\n\n\nBag of Words:\n", bag)
