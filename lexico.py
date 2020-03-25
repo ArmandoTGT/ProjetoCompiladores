@@ -32,7 +32,7 @@ class lexico:
     def execoes(self, element):
         if(element.orth_ == "testes" and element.pos_ != "NOUN"):
             element.pos_ = "NOUN"
-        if(element.orth == "documentos" and element.pos != "NOUN"):
+        if(element.orth_ == "documentos" and element.pos_ != "NOUN"):
             element.pos_ = "NOUN"
         return element
 

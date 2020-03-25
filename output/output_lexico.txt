@@ -34,5 +34,4 @@
 {'token': '.', 'class': 'PUNCT'}
 {'token': 'autora', 'class': 'NOUN'}
 {'token': 'juntar', 'class': 'VERB'}
-{'token': 'documentos', 'class': 'SYM'}
-{'token': '.', 'class': 'PUNCT'}
+{'token': 'documentos', 'class': 'NOUN'}
