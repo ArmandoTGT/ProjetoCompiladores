@@ -1,4 +1,5 @@
 import sys
+import json
 
 class BagOfWord():
 
@@ -13,11 +14,17 @@ class BagOfWord():
         palavras = []
         count_textos = 0
 
-        print("\n")
+        print("\n--------------------------------------")
+        print("=====================================")
+        print("Texto Completo:")
+        print("=====================================")
         print(self.textos)
-        for texto in self.textos:
-            texto = texto.split(" ")
+        print("--------------------------------------")
 
+        for texto in self.textos:
+
+            texto = texto.replace(".", "")
+            texto = texto.split(" ")
             for palavra in texto:
                 if palavra not in palavras:
                     bag[palavra] = {}
@@ -40,5 +47,16 @@ class BagOfWord():
             bag[palavra]["frequencia"] = ((qtd_palavra)/total_palavras) * 100
             bag[palavra]["frequencia"] = str("{:.2f}".format(bag[palavra]["frequencia"])) + "%"
 
-        print("\n\n\nPalavras:\n", palavras)
-        print("\n\n\nBag of Words:\n", bag)
+        print("\n--------------------------------------")
+        print("=====================================")
+        print("Palavras Presentes no Texto:")
+        print("=====================================")
+        print(palavras)
+        print("--------------------------------------")
+
+        print("\n--------------------------------------")
+        print("=====================================")
+        print("Resultado Final:")
+        print("=====================================\n")
+        print(json.dumps(bag, indent=4, ensure_ascii=False))
+        print("--------------------------------------\n")

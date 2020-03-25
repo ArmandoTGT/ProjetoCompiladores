@@ -24,7 +24,7 @@ class Sintatico():
             del self.output_lexico[0]
 
         except Exception as error:
-            print("Error:", error)
+            #print("Error:", error)
             self.token_atual = ""
             self.class_atual = ""
 
