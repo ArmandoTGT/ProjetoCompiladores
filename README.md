@@ -21,7 +21,8 @@ Esse analisador a verificação da sintaxe do texto usando funções recursivas 
 A linguagem final já sem ambiguidade e recursão a esquerda:
 
 ------------------------------
-texto ->
+
+<b>texto</b> ->
 
 sintagma_adverbial texto |
 sentença pontuação |
@@ -29,7 +30,7 @@ sentença pontuação texto
 
 -------------------------------
 
-sintagma_adverbial ->
+<b>sintagma_adverbial</b> ->
 
 advérbio sintagma_adverbial |
 advérbio |
@@ -37,14 +38,14 @@ e
 
 ------------------------------
 
-sentença ->
+<b>sentença</b> ->
 
 sintagma_nominal sentença |
 sintagma_nominal sintagma_verbal
 
 -----------------------------
 
-sintagma_nominal ->
+<b>sintagma_nominal</b> ->
 
 sintagma_adjetival sintagma_nominal |
 substantivo sintagma_nominal |
@@ -54,7 +55,7 @@ pronome
 
 -----------------------------
 
-sintagma_adjetival ->
+<b>sintagma_adjetival</b> ->
 
 sintagma_adverbial adjetivo |
 adjetivo sintagma_adjetival |
@@ -62,7 +63,7 @@ e
 
 ------------------------------
 
-sintagma_verbal ->
+<b>sintagma_verbal</b> ->
 
 sintagma_adverbial sintagma_verbal |
 verbo sintagma_adjetival |
@@ -71,6 +72,7 @@ verbo_auxiliar verbo |
 verbo sintagma_verbal |
 verbo |
 e
+
 ------------------------------
 
 ## Bag of Words
