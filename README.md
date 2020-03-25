@@ -19,17 +19,58 @@ Usando funções da biblioteca também garantimos a separação das palavras cor
 Esse analisador a verificação da sintaxe do texto usando funções recursivas que foram construídas com base na **gramática livre de contexto** criada com base no exemplo citado anteriormente. A gramática que vamos mostrar não abrange toda a língua portuguesa, só parte dela, mas o objetivo é que a linguagem seja feita para textos parecidos com o do exemplo.
 
 A linguagem final já sem ambiguidade e recursão a esquerda:
+  
+texto ->
 
+sintagma_adverbial texto |
+sentença pontuação |
+sentença pontuação texto
 
-*Texto &#8594; SintagmaAdverbial Texto | Sentença1 pontuação SentençasPosteriores*  
-*SentençasPosteriores &#8594; Texto | ε*  
-*Sentença1 &#8594; SintagmaNominal Sentença2*  
-*Sentença2 &#8594; SintagmaNominal  Sentença2 | SintagmaVerbal Sentença2 | ε*  
-*SintagmaNominal  &#8594; SintagmaAdjetival SintagmaNominal  | substantivo SintagmaNominal  | pronome SintagmaNominal  | substantivo | pronome*  
-*SintagmaVerbal &#8594; SintagmaAdverbial SintagmaVerbal | verbo-auxiliar verbo | verbo PosteriorVerbo*  
-*PosteriorVerbo &#8594; SintagmaVerbal | SintagmaAdjetival | ε*  
-*SintagmaAdjetival  &#8594; SintagmaAdverbial adjetivo | adjetivo SintagmaAdjetival | ε*  
-*SintagmaAdverbial &#8594; advérbio SintagmaAdverbial | advérbio | ε*  
+-------------------------------
+
+sintagma_adverbial ->
+
+advérbio sintagma_adverbial |
+advérbio |
+e
+
+------------------------------
+
+sentença ->
+
+sintagma_nominal sentença |
+sintagma_nominal sintagma_verbal
+
+-----------------------------
+
+sintagma_nominal ->
+
+sintagma_adjetival sintagma_nominal |
+substantivo sintagma_nominal |
+pronome sintagma_nominal |
+substantivo |
+pronome
+
+-----------------------------
+
+sintagma_adjetival ->
+
+sintagma_adverbial adjetivo |
+adjetivo sintagma_adjetival |
+e
+
+------------------------------
+
+sintagma_verbal ->
+
+sintagma_verbal sintagma_adjetival |
+sintagma_verbal sintagma_nominal |
+sintagma_adverbial sintagma_verbal |
+verbo_auxiliar verbo |
+verbo sintagma_verbal |
+verbo |
+e
+
 
 ## Bag of Words
 
