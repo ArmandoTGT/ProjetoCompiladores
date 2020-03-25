@@ -19,7 +19,8 @@ Usando funções da biblioteca também garantimos a separação das palavras cor
 Esse analisador a verificação da sintaxe do texto usando funções recursivas que foram construídas com base na **gramática livre de contexto** criada com base no exemplo citado anteriormente. A gramática que vamos mostrar não abrange toda a língua portuguesa, só parte dela, mas o objetivo é que a linguagem seja feita para textos parecidos com o do exemplo.
 
 A linguagem final já sem ambiguidade e recursão a esquerda:
-  
+
+------------------------------
 texto ->
 
 sintagma_adverbial texto |
@@ -63,15 +64,19 @@ e
 
 sintagma_verbal ->
 
-sintagma_verbal sintagma_adjetival |
-sintagma_verbal sintagma_nominal |
 sintagma_adverbial sintagma_verbal |
+verbo sintagma_adjetival |
+verbo sintagma_nominal |
 verbo_auxiliar verbo |
 verbo sintagma_verbal |
 verbo |
 e
-
+------------------------------
 
 ## Bag of Words
+
+Após criar a nossa tabela utilizando o analisador léxico e validar essa tabela utilizando o analisador sintático que foi feito com base na gramática livre de contexto, também fizemos o uso do bag-of-words.
+
+O modelo <b>bag-of-words</b> é uma representação simplificada usada no <b>processamento de linguagem natural (PLN)</b> e na <b>recuperação de informações (IR)</b>. Logo, neste modelo, representamos um texto, com seus <b>n</b> conjuntos de palavras como um <b><i>bag</i></b> (multiset) de suas palavras, desconsiderando a gramática e mesmo a ordem das palavras, mas, mantendo a multiplicidade. Assim, o <b>bag-of-words</b> apenas preocupasse com a frequência que essas palavras aparecem nos textos e em que textos elas aparecem, pois, a palavra pode aparecer em <b>m</b> textos. Assim, nós criamos uma frequência para cada palavra com base em todas as outras palavras, ou seja, fazemos um somatório da aparição da palavra nos diversos textos e dividimos pelo total de palavras nos textos e sem repetição, ao final multiplicamos por 100 para encontrar a sua porcentagem de frequência.
 
 # 
