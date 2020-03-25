@@ -8,6 +8,9 @@ from bag_of_word import BagOfWord
 if __name__ == '__main__':
     table = lexico('entrada.txt').tabela_de_tokens()
 
+    tabelas_textos = []
+    tabelas_textos.append(table.copy())
+
     print("=====================================")
     print("Tabela Gerada pelo Analisador Léxico:")
     print("=====================================\n")
@@ -31,5 +34,5 @@ if __name__ == '__main__':
     print("\n\n=====================================")
     print("Bag Of Words:")
     print("=====================================")
-    BagOfWord(textos).contador()
+    BagOfWord(tabelas_textos).contador()
     print("\n=====================================")

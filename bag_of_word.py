@@ -23,9 +23,8 @@ class BagOfWord():
 
         for texto in self.textos:
 
-            texto = texto.replace(".", "")
-            texto = texto.split(" ")
             for palavra in texto:
+                palavra = palavra['token']
                 if palavra not in palavras:
                     bag[palavra] = {}
 
